@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Source Code Collector</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+    </style>
+</head>
+<body>
+    <h1>Source Code Collector - Status Check</h1>
+    
+    <div class="status info">
+        <strong>Server Status:</strong> Checking if React app is running...
+    </div>
+    
+    <div class="status info">
+        <strong>Expected URL:</strong> <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
+    </div>
+    
+    <div class="status info">
+        <strong>Features to Test:</strong>
+        <ul>
+            <li>Platform selection (GitHub, GitLab, Bitbucket, etc.)</li>
+            <li>Repository URL input with validation</li>
+            <li>File upload with drag & drop</li>
+            <li>Beautiful glass-morphism UI</li>
+        </ul>
+    </div>
+    
+    <script>
+        // Test if the React app is accessible
+        fetch('http://localhost:3000')
+            .then(response => {
+                if (response.ok) {
+                    document.querySelector('.status.info').innerHTML = 
+                        '<strong>✅ Server Status:</strong> React app is running successfully!';
+                    document.querySelector('.status.info').className = 'status success';
+                }
+            })
+            .catch(error => {
+                document.querySelector('.status.info').innerHTML = 
+                    '<strong>❌ Server Status:</strong> React app is not accessible. Error: ' + error.message;
+                document.querySelector('.status.info').className = 'status error';
+            });
+    </script>
+</body>
+</html>
+
