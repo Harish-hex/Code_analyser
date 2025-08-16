@@ -260,3 +260,9 @@ For questions or issues:
 
 **Now with powerful analysis and operations capabilities! 🚀**
 
+
+---
+
+**Built with ❤️ using React and Tailwind CSS**
+
+**Now with powerful analysis and operations capabilities! 🚀**
